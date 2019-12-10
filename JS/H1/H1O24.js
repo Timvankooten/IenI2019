@@ -14,6 +14,24 @@ function setup() {
 
 function draw() {
   background('olive');
+
+ if (keyIsDown(65)) {
+    xProoi -= 6;
+  }
+  if (keyIsDown(68)) {
+    xProoi += 6;
+  }
+  if (keyIsDown(87)) {
+    yProoi -= 6;
+  }
+  if (keyIsDown(83)) {
+    yProoi += 6;
+  }
+
+  xProoi = constrain(xProoi,0,width - 75);
+  yProoi = constrain(yProoi,0,height - 50);
+
+
   if (keyIsDown(LEFT_ARROW)) {
     xJager -= 5;
   }
@@ -30,15 +48,17 @@ function draw() {
   xJager = constrain(xJager,0,width - 100);
   yJager = constrain(yJager,0,height - 100);
 
-  if (xJager >= 700 && xJager <= 875 && yJager >= 75 && yJager <= 225) {
+  if (xJager >= Xprooi - 100 && xJager <= xProoi + 75 && yJager >= yProoi - 100 && yJager <= yProoi + 50) {
     fill('chartreuse');
+    eindScherm();
   }
   else {
     fill('darkkhaki');
   }
-  rect(800,175,75,50);
+  rect(xProoi,yProoi,75,50);
   fill('moccasin');
   rect(xJager,yJager,100,100);   
+
 }
 
 function eindScherm() {

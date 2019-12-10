@@ -11,7 +11,16 @@ function setup() {
 }
 
 function draw() {
-  background('lavender');
+
+    if (mouseX <= width /2 )
+    
+
+    { background('yellow')
+}
+
+    else {
+  background('lavender');}
+
   fill('black');  
   
   mouseX=constrain(mouseX,25,width - 25);
@@ -19,7 +28,8 @@ function draw() {
 
   text("Beweeg de muis | x = " + round(mouseX) + " en y = " + round(mouseY),10,20 );
   
-  if (mouseX >= width - 30 ||  mouseX <=  30 || mouseY >= width - 30 ||  mouseY <=  30)  {
+  if (mouseX >= width - 30 ||  mouseX <=  30 || mouseY >= width - 30 ||  mouseY <=  30 
+    || afstandJOS <= 80)  {
     kleur='red';
   }
     
